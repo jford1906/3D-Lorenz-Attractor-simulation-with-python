@@ -34,7 +34,7 @@ for i in range(n - 1):
     
 fig = plt.figure('Atrator de Lorenz', facecolor = 'k', figsize = (10, 9))
 fig.tight_layout()
-ax = fig.gca(projection = '3d')
+ax = fig.add_subplot(projection = '3d')
 
 def update(i): # ... craindo a animação
     ax.view_init(-6, -56 + i/2)
@@ -44,4 +44,5 @@ def update(i): # ... craindo a animação
     ax.plot(evol[:i,0], evol[:i,1], evol[:i,2], color= 'lime', lw = 0.9)
 
 ani = animation.FuncAnimation(fig, update, np.arange(15000), interval = 2, repeat = False)
+
 plt.show()
